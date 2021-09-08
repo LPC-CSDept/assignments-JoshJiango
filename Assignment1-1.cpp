@@ -35,7 +35,7 @@ int main()
     s[i].avg = s[i].sum / 2;
   }
 
-    for(int i=1; i<=10; i++)
+  for(int i=1; i<=10; i++)
   {
     cout << s[i].id << "\t";
     cout << s[i].sname << "\t";
