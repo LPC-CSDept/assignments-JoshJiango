@@ -16,20 +16,22 @@ int main()
   int first = 0;
   int last = N-1;
   int mid = (first + last)/2;
-  int target=35;
+  int target;
 
-  //cout <<"Pleae enter the # you want to search: " << endl;
-  //cin >> target;
+  cout <<"Pleae enter the # you want to search: " << endl;
+  cin >> target;
 
   index = binarySearch(numbers, N, target);
+
   if (index == -1)
   {
-    cout << "Not found" << endl;
+    cout << "Found at index(main): " << mid << endl;
   }
   else
   {
-    cout << "Found at index: " << index << endl;
+    cout << "# Not Found, Please try again" << endl;
   }
+ return 0;
 }
 
 int binarySearch(int numbers[], int N, int target)
@@ -43,13 +45,13 @@ int binarySearch(int numbers[], int N, int target)
     mid = (first + last)/2;
     if(numbers[mid]==target)
     {
-      cout << "Found at index: " << mid << endl;
+      cout << "Found at index(binarySearch): " << mid << endl;
     }
-    else if(numbers[mid] < target)
+    if(numbers[mid] < target)
     {
       first = mid +1;
     }
-    else if(numbers[mid] > target)
+    else
     {
       last = mid - 1;
     }
