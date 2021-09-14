@@ -25,27 +25,25 @@ int main()
 
   if (index == -1)
   {
-    cout << "Found at index(main): " << mid << endl;
+    cout << "# Not Found Please try again." << endl;
   }
   else
   {
-    cout << "# Not Found, Please try again" << endl;
+    cout << "# Found at Index: "<< index << endl;
   }
  return 0;
 }
 
 int binarySearch(int numbers[], int N, int target)
 {
-  int first = 0;
-  int last = N-1;
-  int mid = (first + last)/2;
-
+  int first = 0, last = N-1;
+  
   while(first <= last)
   {
-    mid = (first + last)/2;
+    int mid = (first + last)/2;
     if(numbers[mid]==target)
     {
-      cout << "Found at index(binarySearch): " << mid << endl;
+      return mid;
     }
     if(numbers[mid] < target)
     {
@@ -56,5 +54,5 @@ int binarySearch(int numbers[], int N, int target)
       last = mid - 1;
     }
   }
-  return -1;
+ return -1;
 }
