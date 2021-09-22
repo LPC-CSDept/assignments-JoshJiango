@@ -21,7 +21,7 @@ int binarySearch(Students [], int , int );
 int main()
 {
 	const int N = 10;
-  int target;
+  double target;
 	Students s[N];
 
 	makeStudents(s, N); // To read the student information from the file
@@ -37,7 +37,7 @@ int main()
   cin >> target;
 
 	//int target = 10006677;
-  if(target >= 10001111 || target <= 10009999)
+  if(target >= 10001111 && target <= 10009999)
   {
 	  int result = binarySearch(s, N, target);
 	  if (result)
@@ -104,7 +104,7 @@ void printStudents(Students s[], int N)
     }
 		cout << endl;
 	}
-	cout << "==== End of Information === \n\n";
+	cout << "===== End of Information ===== \n\n";
 }
 
 int binarySearch(Students array[], int N, int target)
