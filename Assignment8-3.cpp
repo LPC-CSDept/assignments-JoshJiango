@@ -28,6 +28,11 @@ int findMin(int numbers[], int N, int ith)
 {
   int min, minidx, i;
   min = numbers[ith];
+  
+   // Add this line to set the initial value for ids.
+    // minidx = ith; 
+  
+  
   for(int i=ith; i<N; i++)
   {
     if(min>numbers[i])
