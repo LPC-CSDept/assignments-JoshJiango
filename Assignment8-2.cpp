@@ -12,7 +12,7 @@ int binarySearch(int [], int , int );
 
 int main()
 {
-	const int TRY = 10;
+	const int TRY = 1000;
 	const int N = 64;
 	int array[N];
 	int target;
