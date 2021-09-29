@@ -25,21 +25,19 @@ int main()
 	Students s[N];
 
 	makeStudents(s, N); // To read the student information from the file
+  cout << "\n" << endl;
 	printStudents(s, N); 
 
-
-	// 1) Sort by ID
-	sortStudents(s, N);
+	sortStudents(s, N); // To sort the information by student ID
 	printStudents(s, N); 
-	// 2) Search the certain student information by the ID (or any other fields)
-	// binary search
+
   cout << "Please enter the 8 digit ID of the student you want to reivew: " << endl;
   cin >> target;
 
-	//int target = 10006677;
   if(target >= 10001111 && target <= 10009999)
   {
 	  int result = binarySearch(s, N, target);
+    cout << "The vaule of result is: " << result << endl;
 	  if (result)
 	  {
 		  cout << "The student information: \n";
@@ -50,6 +48,15 @@ int main()
       }
 		cout << endl;
 	  }
+    else
+    {
+      cout << "The student information: \n";
+		  cout << s[result].sid << "\t" << s[result].sname << "\t";
+      for(int i=0; i<NUM_SCORES; i++)
+      {
+			  cout <<  s[result].scores[i] << "\t";
+      }
+		cout << endl;}
   }
   else
   {
@@ -65,8 +72,7 @@ void sortStudents(Students s[], int N)
 		{
 			if (s[j].sid > s[j+1].sid)
       {	
-			  // if ( strcmp(s[j].sname, s[j+1].sname) > 0 )	
-				swap(s[j], s[j+1]);
+			  swap(s[j], s[j+1]);
       }
 		}
 	}
@@ -110,15 +116,16 @@ void printStudents(Students s[], int N)
 int binarySearch(Students array[], int N, int target)
 {
     int first, last, mid;
-    int cmp = 0;
 
     first = 0;
     last = N-1;
+
     while ( first <= last) 
     {
         mid = (first + last) / 2;
         if ( array[mid].sid == target)
         {
+          cout << "the mid index is: " << mid << endl;
           return mid;
         }
         if ( array[mid].sid > target)
