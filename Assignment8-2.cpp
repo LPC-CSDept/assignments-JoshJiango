@@ -55,6 +55,10 @@ int linearSearch(int array[], int N, int target)
         }
     }
     return N;
+	
+	// you should return the comparison number. In for-loop, you have to have a code to count the comparisons.
+	
+	
 }
 
 int binarySearch(int array[], int N, int target)
@@ -70,8 +74,11 @@ int binarySearch(int array[], int N, int target)
         mid = (first + last) / 2;
         if (array[mid] == target)
         {
-          //return cmp;
+          //return cmp; 
           return mid;
+		
+		// return the comparison number
+		
         }
         if (array[mid] > target)
         {
@@ -84,6 +91,9 @@ int binarySearch(int array[], int N, int target)
     }
     //return cmp;
     return -1;
+	
+	// return the comparison number.
+	
 }
 
 void makeArray(int array[], int N)
