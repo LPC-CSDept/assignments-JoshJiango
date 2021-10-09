@@ -79,7 +79,7 @@ void sortStudents(Students * const ptr, int N)
       sum2 = (ptr+j+1)->scores[0] + (ptr+j+1)->scores[1] + (ptr+j+1)->scores[2];
 			if (sum1 > sum2)
       {	
-			  swap(ptr[j], ptr[j+1]);
+			  swap(*(ptr+j), *(ptr+j+1));
       }
 		}
 	}
