@@ -15,17 +15,9 @@ int main()
   srand(time(0));
   Numbers numberset[] = {Numbers(1, 5), Numbers(2, 5), Numbers(3, 10), Numbers(4, 5), Numbers(5, 7)};
 
-  /*
-  numberset[0].printAll(); // Class object instance
-  numberset[1].printAll(); // Class object instance
-  numberset[2].printAll(); // Class object instance
-  numberset[3].printAll(); // Class object instance
-  numberset[4].printAll(); // Class object instance
-  */
-
   for (int i = 0; i < N; i++)
   {
-    cout << "Number Set ID " << numberset[i].getID() << "\t";
+    cout << "Number Set: ";
 
     numberset[i].printAll();
   }
@@ -46,7 +38,32 @@ int main()
 
   deDup(numberset[0], numberset[1]);
 
-  cout << "ID 1 - ID 2\n";
+  cout << "ID 1 - ID 2\n ";
 
   numberset[0].printAll();
+}
+
+int findMax(Numbers numberset[], int size)
+{
+  int id = -1;
+  int max = 0;
+  for(int i=0; i < size; i++)
+  {
+    int diff = numberset[i].getMax()-numberset[i].getMin();
+    //cout << i << " " << diff << endl;
+    if (diff > max)
+    {
+      max=diff;
+      id=i;
+    }
+  }
+  return id;
+}
+
+void deDup(Numbers &numberset1, Numbers &numberset2)
+{
+  for(int i=0; i<numberset2.getSize(); i++)
+  {
+    numberset1.deleteElm(numberset2.getElm(i));
+  }
 }

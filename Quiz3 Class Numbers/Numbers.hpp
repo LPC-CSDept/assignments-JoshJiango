@@ -1,15 +1,18 @@
 #ifndef NUMBERS_H
 #define NUMBERS_H
+#include <vector>
 
 using namespace std;
 
 class Numbers
 {
   private:
-	  int ID = -1;
-    vector<int> numbers[0];
+	  int ID;
+    vector<int> numbers;
 
   public:
+    Numbers();
+    Numbers(int ID, int rnum);
 	  int getID() const;
     int getSize() const;
     int getElm(int i) const;
