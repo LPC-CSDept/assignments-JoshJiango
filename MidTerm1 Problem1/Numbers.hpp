@@ -50,6 +50,14 @@ class Numbers
       return sum;
     }
 
+    // Overloading
+    bool operator>(const Numbers& n2)
+    {
+      return getSummation() > n2.getSummation();
+    }
+    
+    // Friends
+    friend void printNumbers(Numbers);
 
 };
 
