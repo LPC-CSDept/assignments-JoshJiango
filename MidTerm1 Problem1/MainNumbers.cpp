@@ -6,3 +6,8 @@
 using namespace std;
 
 int Numbers::NumofObjects = 0;
+
+int main()
+{
+  
+}
