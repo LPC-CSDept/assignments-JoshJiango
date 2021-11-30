@@ -11,3 +11,8 @@ int main()
 {
   
 }
+
+void printNumbers(Numbers n) 
+{
+ 
+}

@@ -35,6 +35,21 @@ class Numbers
       NumofObjects += 1;
     }
 
+    // Getter/Setter
+    int getID(void) 
+    {
+      return ID;
+    }
+    int getSummation() const
+    {
+      int sum = 0;
+      for(int i = 0; i < values.size(); i++) 
+      {
+        sum += values[i];
+      }
+      return sum;
+    }
+
 
 };
 
