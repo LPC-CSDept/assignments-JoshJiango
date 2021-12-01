@@ -98,3 +98,48 @@ void makeStudents(Student students[], int N)
   }
   ifs.close();
 }
+
+//function to print all student information when called
+void printStudents(Student students[], int N)
+{
+  for(int i=0; i<N; i++)
+  {
+    students[i].printStudent();
+  } 
+  cout << "======== End of the Information ======== \n\n\n";
+}
+
+//function to sort student in descending order by their total scores when called
+void sortStudentsByScoreDesc(Student students[], int N)
+{
+  double sum1 = 0;
+  double sum2 = 0;
+
+	for(int i=0; i<N; i++)
+	{
+		for(int j=0; j<N-1; j++)
+		{
+      sum1 = students[j].getTotalScore();
+      sum2 = students[j+1].getTotalScore();
+			if (sum1 < sum2)
+      {	
+			  swap(students[j], students[j+1]);
+      }
+		}
+	}
+}
+
+//fucntion to sort student by their ID in ascending order when called prior to the binarySearch
+void sortStudentsByIDAsc(Student students[], int N)
+{
+	for(int i=0; i<N; i++)
+	{
+		for(int j=0; j<N-1; j++)
+		{
+			if (students[j].getID() > students[j+1].getID())
+      {	
+			  swap(students[j], students[j+1]);
+      }
+		}
+	}
+}
