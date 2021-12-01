@@ -34,4 +34,15 @@ int main()
   cout << "Please Enter The 8 Digit ID Of The Student You Want To Reivew: " << endl;
   cin >> target;
 
+  Student* searchResult = binarySearch(students, NUM_STUDENTS, target);
+
+  if (searchResult != NULL) 
+  {
+    cout << "\nThe Student Information: \n";
+    searchResult->printStudent();
+  } 
+  else 
+  {
+    cout << "The ID You Have Entered Is Invalid, Please Try Again By Running The Program." << endl;
+  }
 }
