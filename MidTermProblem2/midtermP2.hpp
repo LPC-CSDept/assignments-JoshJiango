@@ -68,3 +68,33 @@ class Student
 };
 
 #endif
+
+//Reading test subjects from a file "Students2.txt" for easyer testing 
+void makeStudents(Student students[], int N)
+{
+  ifstream ifs;
+
+  ifs.open("Students2.txt");
+  if(ifs.fail())
+  {
+    cerr << "File open error\n";
+    exit(0);
+  }
+  for(int i=0; i<N; i++)
+  {
+    int id;
+    string sname;
+    vector<double> scores;
+    ifs >> id >> sname;
+    for(int j=0; j<NUM_SCORES; j++)
+    {
+      double score;
+      ifs >> score;
+      scores.push_back(score);
+    }
+    students[i].setID(id);
+    students[i].setSName(sname);
+    students[i].setScores(scores);
+  }
+  ifs.close();
+}
