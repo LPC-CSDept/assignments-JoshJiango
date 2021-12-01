@@ -143,3 +143,32 @@ void sortStudentsByIDAsc(Student students[], int N)
 		}
 	}
 }
+
+//binary search function to look for the specific student that user like to view
+Student* binarySearch(Student students[], int N, int target)
+{
+  int first, last, mid;
+
+  first = 0;
+  last = N-1;
+
+  while ( first <= last) 
+  {
+    mid = (first + last) / 2;
+    // cout << first << " " << mid << " " << last << endl;
+    if (target == students[mid].getID())
+    {
+      return &students[mid];
+    }
+    if (target < students[mid].getID())
+    {
+      last = mid - 1;
+    }
+    else 
+    {
+      first = mid + 1;
+    }
+  }
+  
+  return NULL;
+}
