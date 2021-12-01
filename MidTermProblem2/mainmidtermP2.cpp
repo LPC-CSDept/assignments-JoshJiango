@@ -20,4 +20,18 @@ int main()
   cout << "Below Are The 10 Students With Their Information (ID, Name, 3 Test Scores):" << endl; 
   printStudents(students, NUM_STUDENTS);
 
+  // Sort Student List by descenind total scores
+  sortStudentsByScoreDesc(students, NUM_STUDENTS);
+  cout << "All Students With The Descending Order Of Total Scores:" << endl;
+  printStudents(students, NUM_STUDENTS);
+
+  // Sort Student List by asencding ID in preperation for binary search on ID
+  sortStudentsByIDAsc(students, NUM_STUDENTS);
+  cout << "All Students With The Asecending Order Of Student ID:" << endl;
+  printStudents(students, NUM_STUDENTS);
+  
+  // Ask user for input and get the input infor ID in this case
+  cout << "Please Enter The 8 Digit ID Of The Student You Want To Reivew: " << endl;
+  cin >> target;
+
 }
