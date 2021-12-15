@@ -8,11 +8,17 @@ const int NUM_COURSES = 10;
 
 void makeCourses(Course courses[]);
 void printCourses(Course courses[]);
+void sortCoursesByIdAsc(Course courses[]);
 
 int main()
 {
   Course courses[NUM_COURSES];
   makeCourses(courses);
+  printCourses(courses);
+  cout << endl;
+
+  cout << "Sorted" << endl;
+  sortCoursesByIdAsc(courses);
   printCourses(courses);
 }
 
@@ -45,4 +51,18 @@ void printCourses(Course courses[])
   {
     courses[i].printCourse();
   } 
+}
+
+void sortCoursesByIdAsc(Course courses[])
+{
+	for(int i=0; i<NUM_COURSES; i++)
+	{
+		for(int j=0; j<NUM_COURSES-1; j++)
+		{
+			if (courses[j].getId() > courses[j+1].getId())
+      {	
+			  swap(courses[j], courses[j+1]);
+      }
+		}
+	}
 }
