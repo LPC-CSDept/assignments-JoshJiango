@@ -18,6 +18,9 @@ int main()
   printCourses(courses);
   cout << endl;
 
+  cout << "Result With Quick Sorted: " << endl;
+  qsort(courses, 0, NUM_COURSES);
+  printCourses(courses);
 }
 
 //Copy From Final Problem 1
