@@ -6,9 +6,14 @@ using namespace std;
 
 const int NUM_COURSES = 10;
 
+void makeCourses(Course courses[]);
+void printCourses(Course courses[]);
+
 int main()
 {
-
+  Course courses[NUM_COURSES];
+  makeCourses(courses);
+  printCourses(courses);
 }
 
 void makeCourses(Course courses[]) 
@@ -32,4 +37,12 @@ void makeCourses(Course courses[])
     courses[i].setCredit(credit);
   }
   ifs.close();
+}
+
+void printCourses(Course courses[])
+{
+  for(int i=0; i<NUM_COURSES; i++)
+  {
+    courses[i].printCourse();
+  } 
 }
