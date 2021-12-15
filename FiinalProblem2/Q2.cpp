@@ -61,5 +61,12 @@ void qsort(Course courses[], int first, int last)
   {
 		return;
   }
-  
+  pivot_idx = partition(courses, first, last);
+	qsort(courses, first, pivot_idx +1); 
+	qsort(courses, pivot_idx -1, last);
+}
+
+int partition(Course courses[], int first, int last)
+{
+ 
 }
