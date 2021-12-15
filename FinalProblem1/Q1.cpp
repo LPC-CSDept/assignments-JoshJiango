@@ -144,7 +144,7 @@ int recursiveBinarySearch(Course courses[], int target, int first, int last)
   }
   if(courses[mid].getId() > target)
   {
-    ret=recursiveBinarySearch(courses, target, first, mid -1);
+    ret=recursiveBinarySearch(courses, target, first, mid-1);
   }
   else
   {
