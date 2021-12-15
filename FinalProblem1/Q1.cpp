@@ -21,6 +21,20 @@ int main()
   cout << "Sorted:" << endl;
   sortCoursesByIdAsc(courses);
   printCourses(courses);
+
+  int target, result;
+  cout << "Binary Search:" << endl;
+  cout << "Please Enter The 3 Digit Course Number: ";
+  cin >> target;
+  if (target >= 100 && target <= 109)
+  {
+    result = binarySearch(courses, target);
+    courses[result].printCourse();
+  }
+  else
+  {
+    cout << "Invaild Input Please Run The Progarm Again" << endl;
+  }
 }
 
 void makeCourses(Course courses[]) 
