@@ -15,6 +15,7 @@ int main()
 {
   Course courses[NUM_COURSES];
   makeCourses(courses);
+  cout << "Original Course List From txt File" << endl;
   printCourses(courses);
   cout << endl;
 
@@ -31,7 +32,7 @@ void makeCourses(Course courses[])
   ifs.open("courses.txt");
   if(ifs.fail())
   {
-    cerr << "File open error\n";
+    cerr << "File Open Error\n";
     exit(0);
   }
   for(int i=0; i<NUM_COURSES; i++)
@@ -65,7 +66,7 @@ void qsort(Course courses[], int first, int last)
 		return;
   }
   pivot_idx = partition(courses, first, last);
-  //print to check for # of calls
+  //print to check for # of calls, copyright to Jiang
   //cout << first << "\t" << pivot_idx << "\t" << last << endl;
 	qsort(courses, first, pivot_idx -1); 
 	qsort(courses, pivot_idx +1, last);
