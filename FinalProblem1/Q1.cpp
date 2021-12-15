@@ -9,6 +9,7 @@ const int NUM_COURSES = 10;
 void makeCourses(Course courses[]);
 void printCourses(Course courses[]);
 void sortCoursesByIdAsc(Course courses[]);
+int binarySearch(Course courses[], int target);
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
   printCourses(courses);
   cout << endl;
 
-  cout << "Sorted" << endl;
+  cout << "Sorted:" << endl;
   sortCoursesByIdAsc(courses);
   printCourses(courses);
 }
@@ -65,4 +66,31 @@ void sortCoursesByIdAsc(Course courses[])
       }
 		}
 	}
+}
+
+int binarySearch(Course courses[], int target)
+{
+  int first, last, mid;
+
+  first = 0;
+  last = NUM_COURSES-1;
+
+  while (first <= last) 
+  {
+    mid = (first + last) / 2;
+    // cout << first << " " << mid << " " << last << endl;
+    if (target == courses[mid].getCredit())
+    {
+      return mid;
+    }
+    if (target < courses[mid].getCredit())
+    {
+      last = mid - 1;
+    }
+    else 
+    {
+      first = mid + 1;
+    }
+  }
+  return -1;
 }
