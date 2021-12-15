@@ -8,6 +8,8 @@ const int NUM_COURSES = 10;
 
 void makeCourses(Course courses[]);
 void printCourses(Course courses[]);
+void qsort(Course[], int first, int last);
+int partition(Course courses[], int first, int last);
 
 int main()
 {
@@ -49,4 +51,15 @@ void printCourses(Course courses[])
   {
     courses[i].printCourse();
   } 
+}
+
+void qsort(Course courses[], int first, int last)
+{
+  int pivot_idx;
+
+	if ( first >= last)
+  {
+		return;
+  }
+  
 }
