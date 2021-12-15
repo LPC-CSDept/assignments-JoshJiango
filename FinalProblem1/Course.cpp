@@ -16,28 +16,33 @@ Course::Course(int id, string name, int credit)
 // Getter
 int Course::getId(void)
 {
-  
+  return id;
 }
 string Course::getName(void)
 {
- 
+  return name;
 }
 int Course::getCredit(void)
 {
-  
+  return credit;
 }
 
 // Setter  
 void Course::setId(int id)
 {
-  
+  this->id = id;
 }
 void Course::setName(string name)
 {
-  
+  this->name = name;
 }
 void Course::setCredit(int credit)
 {
-  
+  this->credit = credit;
 }
 
+// Helper
+void Course::printCourse()
+{
+  cout << id << "\t" << name << "\t" << credit << endl;
+}
