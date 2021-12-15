@@ -62,11 +62,25 @@ void qsort(Course courses[], int first, int last)
 		return;
   }
   pivot_idx = partition(courses, first, last);
-	qsort(courses, first, pivot_idx +1); 
-	qsort(courses, pivot_idx -1, last);
+  //print to check for # of calls
+  //cout << first << "\t" << pivot_idx << "\t" << last << endl;
+	qsort(courses, first, pivot_idx -1); 
+	qsort(courses, pivot_idx +1, last);
 }
 
 int partition(Course courses[], int first, int last)
 {
- 
+  int pivot = courses[last].getId();
+	int i = -1;
+  
+  for (int j = 0; j < last; j++)
+	{
+		if (courses[j].getId() < pivot)
+    {
+			swap(courses[++i], courses[j]);
+    }
+	}
+	swap(courses[i + 1], courses[last]);
+
+	return i + 1;
 }
