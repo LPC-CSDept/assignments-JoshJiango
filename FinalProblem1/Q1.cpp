@@ -23,9 +23,10 @@ int main()
   cout << "Sorted:" << endl;
   sortCoursesByIdAsc(courses);
   printCourses(courses);
+  cout << endl;
 
   int target, result;
-  
+
   cout << "Binary Search:" << endl;
   cout << "Please Enter The 3 Digit Course Number: ";
   cin >> target;
@@ -37,6 +38,21 @@ int main()
   else
   {
     cout << "Invaild Input Please Run The Progarm Again" << endl;
+  }
+
+  //Extra Points
+  cout << endl;
+  cout << "Recursive Binary Search:" << endl;
+  cout << "Please Enter the 3 Digit Course Number: ";
+  cin >> target;
+  if (target >= 100 && target <= 109)
+  {
+    result = recursiveBinarySearch(courses, target, 0, NUM_COURSES);
+    courses[result].printCourse();
+  }
+  else
+  {
+    cout << "Invaild Input for Recursive Search Please Run The Progarm Again" << endl;
   }
 }
 
