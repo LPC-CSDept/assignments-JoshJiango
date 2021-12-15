@@ -11,15 +11,18 @@ class Course
     string name;
     int credit;
 
-  public:
+ public:
     Course();
-    Course();
+    Course(int, string, int);
+
     int getId();
     string getName();
     int getCredit();
-    void setId();
-    void setName();
-    void setCredit();
+
+    void setId(int);
+    void setName(string);
+    void setCredit(int);
+
     void printCourse();
 };
 
