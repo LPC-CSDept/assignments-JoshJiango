@@ -25,6 +25,7 @@ int main()
   printCourses(courses);
 
   int target, result;
+  
   cout << "Binary Search:" << endl;
   cout << "Please Enter The 3 Digit Course Number: ";
   cin >> target;
@@ -111,7 +112,7 @@ int binarySearch(Course courses[], int target)
   return -1;
 }
 
-//Extra Points
+//Extra Points 
 int recursiveBinarySearch(Course courses[], int target, int first, int last) 
 {
   int mid, ret;
@@ -121,5 +122,17 @@ int recursiveBinarySearch(Course courses[], int target, int first, int last)
     return -1;
   }
   mid=(first + last) / 2;
-  
+  if(courses[mid].getId() == target)
+  {
+    return mid;
+  }
+  if(courses[mid].getId() > target)
+  {
+    ret=recursiveBinarySearch(courses, target, first, mid -1);
+  }
+  else
+  {
+    ret=recursiveBinarySearch(courses, target, mid+1, last);
+  }
+  return ret;
 }
