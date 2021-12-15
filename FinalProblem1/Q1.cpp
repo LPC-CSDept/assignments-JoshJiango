@@ -10,6 +10,8 @@ void makeCourses(Course courses[]);
 void printCourses(Course courses[]);
 void sortCoursesByIdAsc(Course courses[]);
 int binarySearch(Course courses[], int target);
+//Extra Points
+int recursiveBinarySearch(Course courses[], int target, int first, int last);
 
 int main()
 {
@@ -107,4 +109,17 @@ int binarySearch(Course courses[], int target)
     }
   }
   return -1;
+}
+
+//Extra Points
+int recursiveBinarySearch(Course courses[], int target, int first, int last) 
+{
+  int mid, ret;
+
+  if(first > last)
+  {
+    return -1;
+  }
+  mid=(first + last) / 2;
+  
 }
