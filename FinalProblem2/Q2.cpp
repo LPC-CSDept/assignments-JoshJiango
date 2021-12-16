@@ -20,7 +20,7 @@ int main()
   cout << endl;
 
   cout << "Result With Quick Sorted: " << endl;
-  qsort(courses, 0, NUM_COURSES);
+  qsort(courses, 0, NUM_COURSES-1);
   printCourses(courses);
 }
 
@@ -66,11 +66,35 @@ void qsort(Course courses[], int first, int last)
 		return;
   }
   pivot_idx = partition(courses, first, last);
-  //print to check for # of calls, copyright to Jiang
-  //cout << first << "\t" << pivot_idx << "\t" << last << endl;
 	qsort(courses, first, pivot_idx -1); 
 	qsort(courses, pivot_idx +1, last);
 }
+
+/*
+void qsort(Course courses[], int first, int last)
+{
+  cout << "start: " << first << " " << last << endl;
+  int pivot_idx;
+
+	if ( first >= last)
+  {
+		cout <<"return" <<endl;
+    return;
+  }
+
+	pivot_idx = partition(courses, first, last);
+  //print to check for # of calls
+  cout << first << "\t" << pivot_idx << "\t" << last << endl;
+  //cout <<courses[0].getId();
+  printCourses(courses);
+  cout << "cqsort1 ("<<first<<"," <<last<<")" << first << " " << pivot_idx-1<<endl;
+	qsort(courses, first, pivot_idx -1); 
+
+  printCourses(courses);
+  cout << "cqsort2 ("<<first<<"," <<last<<")" << pivot_idx+1<<" "<<last<<endl;
+	qsort(courses, pivot_idx +1, last); 
+}
+*/
 
 int partition(Course courses[], int first, int last)
 {
