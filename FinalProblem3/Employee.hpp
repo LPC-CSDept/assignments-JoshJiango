@@ -13,13 +13,16 @@ class Employee
 
   public:
     Employee();
-    Employee();
+    Employee(int, string, string);
+
     int getId();
     string getName();
     string getHireDate();
-    void setId();
-    void setName();
-    void setHireDate();
+
+    void setId(int id);
+    void setName(string name);
+    void setHireDate(string credit);
+
     void printWorkers();
 };
 
