@@ -34,6 +34,14 @@ void makeWorkers(ProductWorker workers[])
     string hireDate;
     int shift;
     double rate;
+    ifs >> name >> id >> hireDate >> shift >> rate;
+    workers[i].setName(name);
+    workers[i].setId(id);
+    workers[i].setHireDate(hireDate);
+    workers[i].setShift(shift);
+    workers[i].setPayRate(rate);
+  }
+  ifs.close();
 }
 
 void printWorkers(ProductWorker workers[])
