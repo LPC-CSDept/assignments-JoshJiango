@@ -20,6 +20,12 @@ int main()
   ProductWorker highestWorker = findHighestHourlyRate(workers);
   highestWorker.printWorker();
   cout << endl;
+
+  cout << "Comparing Workers with Higher Rate: " << endl;
+  ProductWorker* worker1 = new ProductWorker(11111, "Hua", "10/10/2021", 1, 19.2);
+  ProductWorker* worker2 = new ProductWorker(11112, "Jiang", "10/11/2021", 1, 16.2);
+  ProductWorker* higherPaidWorker;
+
 }
 
 void makeWorkers(ProductWorker workers[]) 
