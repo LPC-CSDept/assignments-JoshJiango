@@ -15,7 +15,7 @@ int main()
 {
   Course courses[NUM_COURSES];
   makeCourses(courses);
-  cout << "Original Course List From txt File" << endl;
+  cout << "Original Course List From Reading txt File: " << endl;
   printCourses(courses);
   cout << endl;
 
