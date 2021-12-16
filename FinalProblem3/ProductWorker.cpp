@@ -25,3 +25,13 @@ double ProductWorker::getPayRate(void)
 {
   return payRate;
 }
+
+// Setter  
+void ProductWorker::setShift(int shift)
+{
+  this->shift = shift;
+}
+void ProductWorker::setPayRate(double payRate)
+{
+  this->payRate = payRate;
+}
