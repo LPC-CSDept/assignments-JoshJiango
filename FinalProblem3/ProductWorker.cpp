@@ -35,3 +35,8 @@ void ProductWorker::setPayRate(double payRate)
 {
   this->payRate = payRate;
 }
+
+void ProductWorker::printWorker()
+{
+  cout << getName() << "\t" << getId() << "\t" << getHireDate() << "\t" << shift << "\t" << payRate << endl;
+}
