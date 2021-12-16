@@ -19,7 +19,14 @@ int main()
 
 void makeWorkers(ProductWorker workers[]) 
 {
+  ifstream ifs;
 
+  ifs.open("worker.txt");
+  if(ifs.fail())
+  {
+    cerr << "File open error\n";
+    exit(0);
+  }
 }
 
 void printWorkers(ProductWorker workers[])
