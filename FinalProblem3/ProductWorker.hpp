@@ -13,15 +13,19 @@ class ProductWorker : public Employee
 
   public:
     ProductWorker();
-    ProductWorker();
+    ProductWorker(int, string, string, int, double);
 
     int getShift();
     double getPayRate();
 
-    void setShift();
-    void setPayRate(d);
+    void setShift(int);
+    void setPayRate(double);
 
     void printWorker();
+
+    friend bool operator> (const ProductWorker&, const ProductWorker& that);
+
+    friend ProductWorker findHighestHourlyRate(ProductWorker worker []);
 };
 
 #endif
