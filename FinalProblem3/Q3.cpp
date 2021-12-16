@@ -27,6 +27,13 @@ void makeWorkers(ProductWorker workers[])
     cerr << "File open error\n";
     exit(0);
   }
+  for(int i=0; i<NUM_WORKERS; i++)
+  {
+    string name;
+    int id;
+    string hireDate;
+    int shift;
+    double rate;
 }
 
 void printWorkers(ProductWorker workers[])
