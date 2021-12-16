@@ -1,3 +1,4 @@
+// All errors reports are submited into the final exame on Canvas, all testing and error screen shots are submited into Github, Please reivew there for detailed information
 #include"Course.hpp"
 #include<iostream>
 #include<fstream>

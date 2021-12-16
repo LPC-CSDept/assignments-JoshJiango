@@ -1,3 +1,4 @@
+// All errors reports are submited into the final exame on Canvas, all testing and error screen shots are submited into Github, tree diagram pdf or jpg both are uploaded into Github in finalProblem2 folder. Please reivew there for detailed information
 #include "Course.hpp"
 #include<iostream>
 #include<fstream>

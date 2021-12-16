@@ -1,3 +1,4 @@
+// All errors reports are submited into the final exame on Canvas, all testing and error screen shots are submited into Github, Please reivew there for detailed information
 #include "ProductWorker.hpp"
 #include <iostream>
 #include <fstream>
@@ -22,11 +23,11 @@ int main()
   cout << endl;
 
   cout << "Comparing Workers with Higher Rate: " << endl;
-  ProductWorker* jiang1 = new ProductWorker(11111, "Hua", "10/10/2021", 1, 19.2);
-  jiang1->printWorker();
-  ProductWorker* jiang2 = new ProductWorker(11112, "Jiang", "10/11/2021", 1, 16.2);
-  jiang2->printWorker();
-  ProductWorker* higherPaidWorker;
+  ProductWorker jiang1 = ProductWorker(11111, "Josh", "10/10/2021", 1, 19.2);
+  jiang1.printWorker();
+  ProductWorker jiang2 = ProductWorker(11112, "Zack", "10/11/2021", 1, 16.2);
+  jiang2.printWorker();
+  ProductWorker higherPaidWorker;
   if (jiang1 > jiang2) 
   {
     higherPaidWorker = jiang1;
@@ -36,7 +37,7 @@ int main()
     higherPaidWorker = jiang2;
   }
   cout << "Person With Higher Pay Rate: " << endl;
-  higherPaidWorker->printWorker();
+  higherPaidWorker.printWorker();
 }
 
 void makeWorkers(ProductWorker workers[]) 
