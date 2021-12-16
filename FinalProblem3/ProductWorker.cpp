@@ -15,3 +15,13 @@ ProductWorker::ProductWorker(int id, string name, string hireDate, int shift, do
   this->shift = shift;
   this->payRate = payRate;
 }
+
+// Getter
+int ProductWorker::getShift(void)
+{
+  return shift;
+}
+double ProductWorker::getPayRate(void)
+{
+  return payRate;
+}
