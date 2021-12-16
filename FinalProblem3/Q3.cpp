@@ -15,6 +15,11 @@ int main()
   makeWorkers(workers);
   printWorkers(workers);
   cout << endl;
+
+  cout << "Find Highest Pay Rate: " << endl;
+  ProductWorker highestWorker = findHighestHourlyRate(workers);
+  highestWorker.printWorker();
+  cout << endl;
 }
 
 void makeWorkers(ProductWorker workers[]) 
@@ -50,4 +55,23 @@ void printWorkers(ProductWorker workers[])
   {
     workers[i].printWorker();
   } 
+}
+
+bool operator> (const ProductWorker& p1, const ProductWorker& p2)
+{
+  // cout << p1.payRate << " " << p2.payRate << endl;
+  return p1.payRate > p2.payRate;
+}
+
+ProductWorker findHighestHourlyRate(ProductWorker workers[])
+{
+  ProductWorker highestWorker = workers[0];
+  for(int i=1; i<NUM_WORKERS; i++)
+  {
+    if ( workers[i] > highestWorker)
+    {
+      highestWorker = workers[i];
+    }
+  } 
+  return highestWorker;
 }
