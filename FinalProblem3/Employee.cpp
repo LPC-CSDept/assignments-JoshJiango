@@ -26,3 +26,21 @@ string Employee::getHireDate(void)
 {
   return hireDate;
 }
+
+// Setter  
+void Employee::setId(int id)
+{
+  this->id = id;
+}
+void Employee::setName(string name)
+{
+  this->name = name;
+}
+void Employee::setHireDate(string credit)
+{
+  this->hireDate = hireDate;
+}
+void Employee::printWorkers()
+{
+  cout << name << "\t" << id << "\t" << hireDate << endl;
+}
