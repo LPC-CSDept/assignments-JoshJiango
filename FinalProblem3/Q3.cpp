@@ -22,7 +22,7 @@ int main()
   highestWorker.printWorker();
   cout << endl;
 
-  cout << "Comparing Workers with Higher Rate: " << endl;
+  cout << "Comparing Workers with Higher Rate 1st Group: " << endl;
   ProductWorker jiang1 = ProductWorker(11111, "Josh", "10/10/2021", 1, 19.2);
   jiang1.printWorker();
   ProductWorker jiang2 = ProductWorker(11112, "Zack", "10/11/2021", 1, 16.2);
@@ -35,6 +35,26 @@ int main()
   else 
   {
     higherPaidWorker = jiang2;
+  }
+  cout << "Person With Higher Pay Rate: " << endl;
+  higherPaidWorker.printWorker();
+
+  cout << endl;
+
+  // More overload > testing code (copy from the code above)
+  cout << "Comparing Workers with Higher Rate 2nd Group: " << endl;
+  ProductWorker jiang3 = ProductWorker(11111, "Josh", "10/10/2021", 1, 16.2);
+  jiang1.printWorker();
+  ProductWorker jiang4 = ProductWorker(11112, "Zack", "10/11/2021", 1, 19.2);
+  jiang2.printWorker();
+  ProductWorker higherPaidWorker2;
+  if (jiang3 > jiang4) 
+  {
+    higherPaidWorker2 = jiang3;
+  } 
+  else 
+  {
+    higherPaidWorker2 = jiang4;
   }
   cout << "Person With Higher Pay Rate: " << endl;
   higherPaidWorker.printWorker();
