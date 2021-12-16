@@ -22,10 +22,21 @@ int main()
   cout << endl;
 
   cout << "Comparing Workers with Higher Rate: " << endl;
-  ProductWorker* worker1 = new ProductWorker(11111, "Hua", "10/10/2021", 1, 19.2);
-  ProductWorker* worker2 = new ProductWorker(11112, "Jiang", "10/11/2021", 1, 16.2);
+  ProductWorker* jiang1 = new ProductWorker(11111, "Hua", "10/10/2021", 1, 19.2);
+  jiang1->printWorker();
+  ProductWorker* jiang2 = new ProductWorker(11112, "Jiang", "10/11/2021", 1, 16.2);
+  jiang2->printWorker();
   ProductWorker* higherPaidWorker;
-
+  if (jiang1 > jiang2) 
+  {
+    higherPaidWorker = jiang1;
+  } 
+  else 
+  {
+    higherPaidWorker = jiang2;
+  }
+  cout << "Person With Higher Pay Rate: " << endl;
+  higherPaidWorker->printWorker();
 }
 
 void makeWorkers(ProductWorker workers[]) 
