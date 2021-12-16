@@ -70,7 +70,25 @@ void qsort(Course courses[], int first, int last)
 	qsort(courses, pivot_idx +1, last);
 }
 
+int partition(Course courses[], int first, int last)
+{
+  int pivot = courses[last].getId();
+	int i = -1;
+  
+  for (int j = 0; j < last; j++)
+	{
+		if (courses[j].getId() < pivot)
+    {
+			swap(courses[++i], courses[j]);
+    }
+	}
+	swap(courses[i + 1], courses[last]);
+
+	return i + 1;
+}
+
 /*
+//Print the Trace For The Tree Diagram 
 void qsort(Course courses[], int first, int last)
 {
   cout << "start: " << first << " " << last << endl;
@@ -95,20 +113,3 @@ void qsort(Course courses[], int first, int last)
 	qsort(courses, pivot_idx +1, last); 
 }
 */
-
-int partition(Course courses[], int first, int last)
-{
-  int pivot = courses[last].getId();
-	int i = -1;
-  
-  for (int j = 0; j < last; j++)
-	{
-		if (courses[j].getId() < pivot)
-    {
-			swap(courses[++i], courses[j]);
-    }
-	}
-	swap(courses[i + 1], courses[last]);
-
-	return i + 1;
-}
